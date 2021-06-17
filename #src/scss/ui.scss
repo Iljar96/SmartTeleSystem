@@ -19,20 +19,54 @@
 	font-size: 36px;
 	line-height: 49/36 * 100%;
 	color: #333333;
+	@media (max-width: 1440.98px) {
+		font-size: 30px;
+		line-height: 41/30 * 100%;
+		@include adaptiv-font(30, 18, 1);
+	}
+	@media (max-width: $md4+px) {
+		line-height: 25/18 * 100%;
+	}
 }
 
 .prev,
 .next {
 	width: 30px;
 	height: 15px;
+	transition: transform 0.3s ease 0s;
+	&.swiper-button-disabled {
+		transform: translate(0px, 0px) !important;
+	}
 }
 .prev {
 	background: url("../img/icons/arrow-left.svg") center no-repeat;
 	background-size: 30px auto;
+	@media (max-width: 1050.98px) {
+		background-size: 20px auto;
+	}
+	@media (max-width: $md4+px) {
+		background-size: 15px auto;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			transform: translate(-5px, 0px);
+		}
+	}
 }
 .next {
 	background: url("../img/icons/arrow-right.svg") center no-repeat;
 	background-size: 30px auto;
+	@media (max-width: 1050.98px) {
+		background-size: 20px auto;
+	}
+	@media (max-width: $md4+px) {
+		background-size: 15px auto;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			transform: translate(5px, 0px);
+		}
+	}
 }
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================

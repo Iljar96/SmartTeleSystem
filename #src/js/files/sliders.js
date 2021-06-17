@@ -72,7 +72,9 @@ function buildProductSliders() {
 			tabBlock.setAttribute('data-tabindex', index);
 			tabBlock.closest('._tabs').querySelectorAll('._tabs-item')[index]
 				.addEventListener('click', e => {
-					initProductSliders(index)
+					if (!tabBlocks[index].querySelector('.swiper-container-initialized ')) {
+						initProductSliders(index);
+					}
 				});
 		}
 	});
@@ -85,11 +87,11 @@ function initProductSliders(i) {
 		observeParents: true,
 		slidesPerView: 1,
 		spaceBetween: 0,
-		// autoHeight: true,
+		autoHeight: true,
 		speed: 800,
 		touchRatio: 0,
 		//simulateTouch: false,
-		// loop: true,
+		loop: true,
 		lazy: true,
 		// Arrows
 		navigation: {
