@@ -1298,6 +1298,14 @@ body.ie ._ibg img {
   position: relative;
 }
 
+.slider-product__body._swiper {
+  overflow-x: hidden;
+}
+
+.slider-product__slide {
+  padding-bottom: 8px;
+}
+
 .slider-product__img {
   float: left;
   width: 31.64%;
@@ -1320,17 +1328,18 @@ body.ie ._ibg img {
 
 .slider-product__text {
   margin: 0px 0px 19px 0px;
-  overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   line-height: 136%;
+  overflow: hidden;
   height: 124px;
 }
 
 .slider-product__text._active {
+  display: block;
+  overflow: visible;
   height: auto;
-  overflow: initial;
   -webkit-line-clamp: initial;
 }
 
@@ -1340,20 +1349,16 @@ body.ie ._ibg img {
   line-height: 136%;
 }
 
-.slider-product__prev,
-.slider-product__next {
+.slider-product__arrow {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translate(0px, -50%);
-      -ms-transform: translate(0px, -50%);
-          transform: translate(0px, -50%);
+  top: 133px;
 }
 
-.slider-product__prev {
+.slider-product__arrow--prev {
   left: -39px;
 }
 
-.slider-product__next {
+.slider-product__arrow--next {
   right: -39px;
 }
 
