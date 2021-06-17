@@ -391,17 +391,13 @@ function digi_animate_value(el, start, end, duration) {
 //Popups
 let popup_link = document.querySelectorAll('._popup-link');
 let popups = document.querySelectorAll('.popup');
-for (let index = 0; index < popup_link.length; index++) {
-	const el = popup_link[index];
-	el.addEventListener('click', function (e) {
-		if (unlock) {
-			let item = el.getAttribute('href').replace('#', '');
-			let video = el.getAttribute('data-video');
-			popup_open(item, video);
-		}
+window.addEventListener('click', function (e) {
+	if (unlock && e.target.classList.contains('_popup-link')) {
+		let item = e.target.getAttribute('data-popup');
+		popup_open(item);
 		e.preventDefault();
-	})
-}
+	}
+});
 for (let index = 0; index < popups.length; index++) {
 	const popup = popups[index];
 	popup.addEventListener("click", function (e) {
@@ -854,6 +850,26 @@ if (sliderScrollItems.length > 0) {
 
 function sliders_bild_callback(params) { }
 
+function popupSliderInit() {
+	const singleProductThumbs = new Swiper(".single-product__swiper-thumbs", {
+		slidesPerView: 3,
+		spaceBetween: 10,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	});
+	const singleProduct = new Swiper(".single-product__swiper", {
+		spaceBetween: 10,
+		navigation: {
+			nextEl: ".single-product__arrow--next",
+			prevEl: ".single-product__arrow--prev",
+		},
+		thumbs: {
+			swiper: singleProductThumbs
+		},
+	});
+}
+
+
 function buildProductSliders() {
 	const tabBlocks = document.querySelectorAll('.product .product__block');
 	let tabindex = 1;
@@ -883,7 +899,7 @@ function initProductSliders(i) {
 		autoHeight: true,
 		speed: 800,
 		touchRatio: 0,
-		//simulateTouch: false,
+		simulateTouch: false,
 		loop: true,
 		lazy: true,
 		// Arrows
@@ -899,14 +915,10 @@ function initProductSliders(i) {
 	});
 }
 buildProductSliders()
-
 window.onload = function () {
-
-	window.addEventListener('click', function (e) {
-		const target = e.target;
-
-	});
-
+	document.querySelectorAll('._hidden')
+		.forEach(item => item.classList.remove('_hidden'));
+	popupSliderInit();
 }
 //let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
 let forms = document.querySelectorAll('form');

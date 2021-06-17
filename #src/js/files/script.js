@@ -1,8 +1,5 @@
 window.onload = function () {
-
-	window.addEventListener('click', function (e) {
-		const target = e.target;
-
-	});
-
+	document.querySelectorAll('._hidden')
+		.forEach(item => item.classList.remove('_hidden'));
+	popupSliderInit();
 }
