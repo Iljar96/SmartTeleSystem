@@ -635,6 +635,22 @@ textarea.input {
   display: none;
 }
 
+._scr-item {
+  -webkit-transition: opacity 1s ease 0s, -webkit-transform 1s ease 0s;
+  transition: opacity 1s ease 0s, -webkit-transform 1s ease 0s;
+  -o-transition: opacity 1s ease 0s, transform 1s ease 0s;
+  transition: opacity 1s ease 0s, transform 1s ease 0s;
+  transition: opacity 1s ease 0s, transform 1s ease 0s, -webkit-transform 1s ease 0s;
+  opacity: 0;
+}
+
+._scr-item._active {
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+}
+
 .row:after {
   display: block;
   content: "";
@@ -1244,15 +1260,67 @@ body.ie ._ibg img {
   font-size: 16px;
 }
 
+/* Popup-submit */
+
+.popup_submit .popup__body {
+  max-width: 560px;
+  padding: 71px 20px 60px;
+}
+
+.popup-submit {
+  text-align: center;
+}
+
+.popup-submit__icon {
+  margin: 0px 0px 31px 0px;
+}
+
+.popup-submit__icon img {
+  width: 77.5px;
+  height: 77.5px;
+  width: calc(58px + 19.5 * ((100vw - 320px) / 1120));
+  height: calc(58px + 19.5 * ((100vw - 320px) / 1120));
+}
+
+.popup-submit__title {
+  margin: 0px 0px 15px 0px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 138.88889%;
+  margin-bottom: calc(10px + 5 * ((100vw - 320px) / 1120));
+}
+
+.popup-submit__text {
+  margin: 0px 0px 30px 0px;
+  font-size: 18px;
+  line-height: 138.88889%;
+  font-size: 18px;
+}
+
+.popup-submit__btn-close {
+  font-size: 14px;
+  line-height: 135.71429%;
+}
+
+.popup-submit__btn-close.popup__close {
+  width: auto;
+  height: auto;
+  position: static;
+  right: auto;
+  top: auto;
+  background: #4a74b8;
+}
+
 .header {
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
+  min-height: 110px;
 }
 
 .header._scroll .header__wrapper {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.85);
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
@@ -1261,20 +1329,21 @@ body.ie ._ibg img {
   min-height: 50px;
 }
 
+.header._scroll + .page {
+  padding-top: 70px;
+}
+
 .header__wrapper {
-  -webkit-transition: background-color 0.3s ease 0s;
-  -o-transition: background-color 0.3s ease 0s;
-  transition: background-color 0.3s ease 0s;
   position: fixed;
   width: 100vw;
   left: 0;
   top: 0;
   z-index: 50;
-  -webkit-transition: -webkit-box-shadow 0.3s ease 0s;
-  transition: -webkit-box-shadow 0.3s ease 0s;
-  -o-transition: box-shadow 0.3s ease 0s;
-  transition: box-shadow 0.3s ease 0s;
-  transition: box-shadow 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s;
+  -webkit-transition: background-color 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s;
+  -o-transition: box-shadow 0.3s ease 0s, background-color 0.3s ease 0s;
+  transition: box-shadow 0.3s ease 0s, background-color 0.3s ease 0s;
+  transition: box-shadow 0.3s ease 0s, background-color 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s;
 }
 
 .header__body {
@@ -1486,8 +1555,22 @@ body.ie ._ibg img {
           flex-direction: column;
 }
 
+.footer__number {
+  font-weight: 600;
+  -webkit-transition: color 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
 .footer__item--mail {
   margin: 0px 0px 26px 0px;
+}
+
+.footer__mail {
+  font-weight: 600;
+  -webkit-transition: color 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
 }
 
 .footer__item--address {
@@ -1924,6 +2007,50 @@ body.ie ._ibg img {
   height: 180px;
 }
 
+/* Animation of scroll */
+
+.intro__img {
+  -webkit-transform: translate(50%, 0px);
+      -ms-transform: translate(50%, 0px);
+          transform: translate(50%, 0px);
+  -webkit-transition: all 1.3s ease 0s;
+  -o-transition: all 1.3s ease 0s;
+  transition: all 1.3s ease 0s;
+}
+
+.intro__content {
+  -webkit-transform: translate(0px, 50px);
+      -ms-transform: translate(0px, 50px);
+          transform: translate(0px, 50px);
+}
+
+.product__title {
+  -webkit-transform: translate(50%, 0px);
+      -ms-transform: translate(50%, 0px);
+          transform: translate(50%, 0px);
+}
+
+.product__nav,
+.product__items,
+.advantages__title,
+.advantages__item {
+  -webkit-transform: translate(0px, 100px);
+      -ms-transform: translate(0px, 100px);
+          transform: translate(0px, 100px);
+}
+
+.delivery__item--delivery {
+  -webkit-transform: translate(-50%, 100px);
+      -ms-transform: translate(-50%, 100px);
+          transform: translate(-50%, 100px);
+}
+
+.delivery__item--payment {
+  -webkit-transform: translate(50%, 100px);
+      -ms-transform: translate(50%, 100px);
+          transform: translate(50%, 100px);
+}
+
 @media (min-width: 767.98px) {
   .menu__list {
     display: -webkit-box;
@@ -2002,6 +2129,10 @@ body.ie ._ibg img {
 
   .single-product__info {
     margin-bottom: calc(20px + 10 * ((100vw - 320px) / 1120));
+  }
+
+  .header {
+    min-height: 105px;
   }
 
   .header__body {
@@ -2217,6 +2348,10 @@ body.ie ._ibg img {
   .popup_form .form__btn {
     font-size: calc(14px + 2 * ((100vw - 320px) / 930));
   }
+
+  .popup-submit__text {
+    font-size: calc(16px + 2 * ((100vw - 320px) / 930));
+  }
 }
 
 @media (max-width: 1050.98px) {
@@ -2317,6 +2452,14 @@ body.ie ._ibg img {
   .single-product__btn {
     margin: 0px 0px 30px 0px;
     margin-bottom: calc(20px + 10 * ((100vw - 320px) / 1120));
+  }
+
+  .popup_submit .popup__body {
+    padding: 65px 20px 20px;
+  }
+
+  .header {
+    min-height: 60px;
   }
 
   .header__body {
@@ -2570,6 +2713,10 @@ body.ie ._ibg img {
     line-height: 135.71429%;
   }
 
+  .popup-submit__text {
+    line-height: 137.5%;
+  }
+
   .form__input {
     margin: 0px 0px 10px 0px;
   }
@@ -2711,12 +2858,20 @@ body.ie ._ibg img {
   }
 
   .header._scroll .header__wrapper:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
   }
 
   .menu__link:hover::after {
     opacity: 1;
     visibility: visible;
+  }
+
+  .footer__number:hover {
+    color: #4a74b8;
+  }
+
+  .footer__mail:hover {
+    color: #4a74b8;
   }
 
   .product__navitem:hover {

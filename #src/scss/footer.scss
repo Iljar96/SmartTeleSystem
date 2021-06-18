@@ -64,6 +64,13 @@
 	}
 	// .footer__number
 	&__number {
+		font-weight: 600;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #4a74b8;
+			}
+		}
 	}
 	// .footer__item--mail
 	&__item--mail {
@@ -77,16 +84,17 @@
 	}
 	// .footer__mail
 	&__mail {
+		font-weight: 600;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #4a74b8;
+			}
+		}
 	}
 	// .footer__item--address
 	&__item--address {
 		margin: 0px 0px 30px 0px;
-	}
-	// .footer__text--address
-	&__text--address {
-	}
-	// .footer__address
-	&__address {
 	}
 	// .footer__form
 	&__form {

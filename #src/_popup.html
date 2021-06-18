@@ -105,7 +105,7 @@
 					<input autocomplete="off" type="text" name="form[]" placeholder="E-mail" class="form__input input">
 					<textarea autocomplete="off" name="form[]" placeholder="Сообщение" class="form__textarea input"></textarea>
 					<div class="form__submit">
-						<button type="submit" class="form__btn btn">Отправить</button>
+						<button data-popup="submit" type="submit" class="form__btn btn _popup-link">Отправить</button>
 					</div>
 				</div>
 			</form>
@@ -113,9 +113,17 @@
 		</div>
 	</div>
 </div>
-<div class="popup popup_submit">
+<div class="popup popup_submit _hidden">
 	<div class="popup__content">
 		<div class="popup__body">
+			<div class="popup-submit">
+				<div class="popup-submit__icon">
+					<img src="img/icons/check-circle.svg" alt="Сообщение отпралено">
+				</div>
+				<h3 class="popup-submit__title">Ваше сообщение отправлено</h3>
+				<div class="popup-submit__text">В ближайшее время мы свяжемся с вами</div>
+				<button type="button" class="popup-submit__btn-close btn popup__close">закрыть</button>
+			</div>
 			<div class="popup__close"></div>
 		</div>
 	</div>

@@ -70,7 +70,7 @@ function scroll_scroll() {
 				scr_item.classList.add('_active');
 				scroll_load_item(scr_item);
 			} else {
-				scr_item.classList.remove('_active');
+				// scr_item.classList.remove('_active');
 			}
 			if (((src_value > scr_item_offset - window.innerHeight))) {
 				if (scr_item.querySelectorAll('._lazy').length > 0) {
@@ -251,7 +251,7 @@ if (link) {
 			}
 			let target_block_class = el.getAttribute('href').replace('#', '');
 			let target_block = document.querySelector('.' + target_block_class);
-			_goto(target_block, 300);
+			_goto(target_block, 800);
 			e.preventDefault();
 		})
 	}
@@ -289,7 +289,7 @@ if (goto_links) {
 		goto_link.addEventListener('click', function (e) {
 			let target_block_class = goto_link.getAttribute('href').replace('#', '');
 			let target_block = document.querySelector('.' + target_block_class);
-			_goto(target_block, 300);
+			_goto(target_block, 800);
 			e.preventDefault();
 		});
 	}
@@ -303,7 +303,7 @@ function _goto(target_block, speed, offset = 0) {
 	let options = {
 		speedAsDuration: true,
 		speed: speed,
-		header: header,
+		header: 'header',
 		offset: offset,
 		easing: 'easeOutQuad',
 	};

@@ -83,6 +83,8 @@ function menu_close() {
 }
 //=================
 //BodyLock
+document.querySelector('.header__wrapper')
+	.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
 function body_lock(delay) {
 	let body = document.querySelector("body");
 	if (body.classList.contains('_lock')) {
@@ -392,6 +394,11 @@ window.addEventListener('click', function (e) {
 	if (unlock && e.target.classList.contains('_popup-link')) {
 		let item = e.target.getAttribute('data-popup');
 		popup_open(item);
+		if (item === 'submit') {
+			setTimeout(function () {
+				popup_close(document.querySelector('.popup_submit'));
+			}, 4000);
+		}
 		e.preventDefault();
 	}
 });

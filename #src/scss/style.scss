@@ -609,4 +609,28 @@ body {
 	}
 }
 
+/* Animation of scroll */
+.intro__img {
+	transform: translate(50%, 0px);
+	transition: all 1.3s ease 0s;
+}
+.intro__content {
+	transform: translate(0px, 50px);
+}
+.product__title {
+	transform: translate(50%, 0px);
+}
+.product__nav,
+.product__items,
+.advantages__title,
+.advantages__item {
+	transform: translate(0px, 100px);
+}
+.delivery__item--delivery {
+	transform: translate(-50%, 100px);
+}
+.delivery__item--payment {
+	transform: translate(50%, 100px);
+}
+
 //</ОСНОВНОЙ БЛОК>====================================================================================================
