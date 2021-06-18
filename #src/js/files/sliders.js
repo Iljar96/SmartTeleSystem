@@ -83,7 +83,6 @@ function popupSliderInit() {
 
 function buildProductSliders() {
 	const tabBlocks = document.querySelectorAll('.product .product__block');
-	let tabindex = 1;
 	tabBlocks.forEach((tabBlock, index) => {
 		if (index === 0) {
 			tabBlock.setAttribute('data-tabindex', 0);
@@ -106,13 +105,20 @@ function initProductSliders(i) {
 		observer: true,
 		observeParents: true,
 		slidesPerView: 1,
-		spaceBetween: 0,
+		spaceBetween: 30,
 		autoHeight: true,
 		speed: 800,
-		touchRatio: 0,
-		simulateTouch: false,
+		touchRatio: 1,
+		simulateTouch: true,
 		loop: true,
 		lazy: true,
+		breakpoints: {
+			768: {
+				touchRatio: 0,
+				simulateTouch: false,
+				speed: 1200
+			},
+		},
 		// Arrows
 		navigation: {
 			nextEl: `[data-tabindex="${i}"] .slider-product__arrow--next`,
